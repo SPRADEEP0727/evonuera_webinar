@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:img": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.3.19",
@@ -18,6 +19,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.2"
   }

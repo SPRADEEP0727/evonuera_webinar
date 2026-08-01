@@ -106,16 +106,19 @@ export default function Hero() {
           {/* Brand glow behind */}
           <div className="absolute inset-0 -z-10 scale-110 rounded-[2rem] bg-grad-brand opacity-30 blur-3xl" />
           <div className="glass-strong overflow-hidden rounded-2xl p-1.5 shadow-glow-lg">
-            <img
-              src="/images/hero.png"
-              alt="Developer building and deploying an AI product live — AI agent flow, code editor and deployment dashboard on stage"
-              width={1536}
-              height={1024}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="w-full rounded-xl"
-            />
+            <picture>
+              <source srcSet="/images/hero.webp" type="image/webp" />
+              <img
+                src="/images/hero.png"
+                alt="Developer building and deploying an AI product live — AI agent flow, code editor and deployment dashboard on stage"
+                width={1536}
+                height={1024}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full rounded-xl"
+              />
+            </picture>
           </div>
         </motion.div>
       </div>
