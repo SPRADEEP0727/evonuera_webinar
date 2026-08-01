@@ -1,0 +1,109 @@
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Sparkles, Calendar } from 'lucide-react'
+import { useReserve } from './ReserveContext.jsx'
+
+const links = [
+  { label: "What You'll Learn", href: '#curriculum' },
+  { label: 'Live Demo', href: '#live-demo' },
+  { label: 'Who Should Attend', href: '#audience' },
+  { label: 'Trainer', href: '#trainer' },
+  { label: 'FAQ', href: '#faq' },
+]
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const { open: openReserve } = useReserve()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled ? 'py-2' : 'py-4'
+      }`}
+    >
+      <nav
+        className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 sm:px-6 transition-all duration-300 ${
+          scrolled ? 'glass-strong shadow-card mx-3 py-2.5 lg:mx-auto' : 'py-3'
+        }`}
+      >
+        <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-grad-brand shadow-glow">
+            <Sparkles className="h-4.5 w-4.5 text-white" strokeWidth={2.5} />
+          </span>
+          Evonuera
+        </a>
+
+        <div className="hidden items-center gap-1 lg:flex">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-slate-300 xl:inline-flex">
+            <Calendar className="h-3.5 w-3.5 text-brand-purple" /> 16 Aug · 10 AM · Tamil
+          </span>
+          <button onClick={openReserve} className="hidden btn-primary !px-5 !py-2.5 text-sm sm:inline-flex">
+            Reserve My Seat · ₹49
+          </button>
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-xl glass text-white lg:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
+            className="mx-3 mt-2 overflow-hidden rounded-2xl glass-strong p-3 lg:hidden"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition-colors hover:bg-white/5"
+              >
+                {l.label}
+              </a>
+            ))}
+            <button
+              onClick={() => {
+                setOpen(false)
+                openReserve()
+              }}
+              className="mt-2 btn-primary w-full text-sm"
+            >
+              Reserve My Seat · ₹49
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  )
+}
