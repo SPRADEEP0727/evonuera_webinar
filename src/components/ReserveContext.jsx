@@ -65,6 +65,21 @@ export function ReserveProvider({ children }) {
               </button>
 
               <div className="max-h-[88vh] overflow-y-auto p-6 sm:p-8">
+                {/* Brand header */}
+                <div className="mb-6 flex items-center gap-2.5">
+                  <picture>
+                    <source srcSet="/images/logo.webp" type="image/webp" />
+                    <img
+                      src="/images/logo_icon.png"
+                      alt="Evonuera logo"
+                      width={36}
+                      height={36}
+                      className="h-9 w-9 rounded-xl shadow-glow"
+                    />
+                  </picture>
+                  <span className="font-display text-lg font-bold text-slate-900">Evonuera</span>
+                </div>
+
                 <ReserveFlow />
               </div>
             </motion.div>
