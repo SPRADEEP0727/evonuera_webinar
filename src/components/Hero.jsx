@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Star, Radio, Users, ArrowRight, Sparkles, Calendar, Clock, Languages } from 'lucide-react'
-import HeroVisual from './HeroVisual.jsx'
 import { useReserve } from './ReserveContext.jsx'
 
 const container = {
@@ -102,8 +101,22 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="relative mx-auto w-full max-w-xl"
         >
-          <HeroVisual />
+          {/* Brand glow behind */}
+          <div className="absolute inset-0 -z-10 scale-110 rounded-[2rem] bg-grad-brand opacity-30 blur-3xl" />
+          <div className="glass-strong overflow-hidden rounded-2xl p-1.5 shadow-glow-lg">
+            <img
+              src="/images/hero.png"
+              alt="Developer building and deploying an AI product live — AI agent flow, code editor and deployment dashboard on stage"
+              width={1536}
+              height={1024}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full rounded-xl"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
