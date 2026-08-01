@@ -1,4 +1,4 @@
-import { Sparkles, Mail, Twitter, Linkedin, Github } from 'lucide-react'
+import { Mail, Twitter, Linkedin, Github } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,9 +8,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-grad-brand shadow-glow">
-                <Sparkles className="h-4.5 w-4.5 text-white" strokeWidth={2.5} />
-              </span>
+              <img
+                src="/images/logo_icon.png"
+                alt="Evonuera logo"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-xl shadow-glow"
+              />
               Evonuera
             </a>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
