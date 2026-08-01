@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Calendar } from 'lucide-react'
 import { useReserve } from './ReserveContext.jsx'
@@ -12,39 +12,28 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { open: openReserve } = useReserve()
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'py-2' : 'py-4'
-      }`}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="relative z-40 py-4"
     >
-      <nav
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 sm:px-6 transition-all duration-300 ${
-          scrolled ? 'glass-strong shadow-card mx-3 py-2.5 lg:mx-auto' : 'py-3'
-        }`}
-      >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-1 sm:px-6">
         <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
-          <img
-            src="/images/logo_icon.png"
-            alt="Evonuera logo"
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-xl shadow-glow"
-          />
+          <picture>
+            <source srcSet="/images/logo.webp" type="image/webp" />
+            <img
+              src="/images/logo_icon.png"
+              alt="Evonuera logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-xl shadow-glow"
+            />
+          </picture>
           Evonuera
         </a>
 

@@ -8,13 +8,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
-              <img
-                src="/images/logo_icon.png"
-                alt="Evonuera logo"
-                width={36}
-                height={36}
-                className="h-9 w-9 rounded-xl shadow-glow"
-              />
+              <picture>
+                <source srcSet="/images/logo.webp" type="image/webp" />
+                <img
+                  src="/images/logo_icon.png"
+                  alt="Evonuera logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 rounded-xl shadow-glow"
+                />
+              </picture>
               Evonuera
             </a>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">

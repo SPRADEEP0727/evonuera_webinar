@@ -14,7 +14,7 @@ const item = {
 export default function Hero() {
   const { open: openReserve } = useReserve()
   return (
-    <section id="top" className="relative px-4 pt-28 sm:px-6 sm:pt-32 lg:pt-40">
+    <section id="top" className="relative px-4 pt-10 sm:px-6 sm:pt-14 lg:pt-20">
       <div className="mx-auto grid max-w-7xl items-center gap-10 sm:gap-12 lg:grid-cols-[1.05fr_1fr]">
         {/* Left copy */}
         <motion.div variants={container} initial="hidden" animate="show" className="text-center lg:text-left">
