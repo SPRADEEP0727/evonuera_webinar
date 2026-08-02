@@ -29,8 +29,8 @@ export default function Hero() {
             variants={item}
             className="mt-6 font-display text-[2rem] font-bold leading-[1.08] tracking-tight text-white text-balance sm:text-5xl sm:leading-[1.05] lg:text-6xl"
           >
-            Build AI Products,{' '}
-            <span className="gradient-text">Not Just Prompts</span>
+            The Complete Roadmap to Building{' '}
+            <span className="gradient-text">AI Systems &amp; AI Products</span>
           </motion.h1>
 
           <motion.p

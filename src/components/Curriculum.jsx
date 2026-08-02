@@ -12,7 +12,7 @@ const items = [
   'How AI Products are launched',
   'Live demonstration: Build & deploy a website using Claude Code',
   'AI tools every builder should know',
-  'How to continue your journey with AI Systems Mastery',
+  'AI Agents & automation for real-world workflows',
 ]
 
 const grid = {
@@ -32,7 +32,7 @@ export default function Curriculum() {
         <SectionHeader
           theme="light"
           eyebrow="What You'll Learn"
-          title="The Complete Roadmap to Building AI Systems & AI Products"
+          title="Here's everything we'll cover"
           subtitle="From your first AI-assisted application to production-ready AI solutions."
         />
 
