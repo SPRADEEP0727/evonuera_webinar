@@ -61,7 +61,7 @@ export default function Trainer() {
             </Reveal>
             <Reveal delay={0.15}>
               <p className="mt-5 max-w-xl leading-relaxed text-slate-400">
-                Pradeep builds AI systems and agentic products for a living — and teaches engineers,
+                Pradeep builds AI systems and agentic products for a living - and teaches engineers,
                 students and founders how to do the same. In this masterclass he shares the exact
                 workflow he uses to take ideas from concept to a live, shipped product.
               </p>

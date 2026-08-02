@@ -21,7 +21,7 @@ export default function Footer() {
               Evonuera
             </a>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Helping engineers, students and founders build AI products — not just prompts. Learn to
+              Helping engineers, students and founders build AI products - not just prompts. Learn to
               ship real, AI-powered software.
             </p>
             <div className="mt-5 flex gap-2.5">

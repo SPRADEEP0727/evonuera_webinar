@@ -22,7 +22,7 @@ export default function Registration() {
                   Reserve your <span className="gradient-text">seat</span>
                 </h2>
                 <p className="mt-4 leading-relaxed text-slate-500">
-                  Just ₹49 — a one-time fee to lock in your live seat. Seats are limited, so grab yours
+                  Just ₹49 - a one-time fee to lock in your live seat. Seats are limited, so grab yours
                   before it's full.
                 </p>
 
@@ -36,7 +36,7 @@ export default function Registration() {
                     <Calendar className="h-4.5 w-4.5 text-brand-purple" /> Sunday, 16 August
                   </span>
                   <span className="flex items-center gap-2">
-                    <Clock className="h-4.5 w-4.5 text-brand-coral" /> 10:00 – 11:00 AM IST
+                    <Clock className="h-4.5 w-4.5 text-brand-coral" /> 10:00 - 11:00 AM IST
                   </span>
                   <span className="flex items-center gap-2">
                     <Languages className="h-4.5 w-4.5 text-brand-purple" /> Language: Tamil
@@ -73,7 +73,7 @@ export default function Registration() {
               </div>
             </div>
 
-            {/* Right — reservation flow (details → payment → community) */}
+            {/* Right - reservation flow (details → payment → community) */}
             <div className="relative border-t border-slate-200 p-8 sm:p-10 md:border-l md:border-t-0">
               <ReserveFlow />
             </div>

@@ -46,7 +46,7 @@ export default function StickyCTA() {
                 Live Masterclass · Tamil
                 <span className="inline-flex items-center gap-1.5 text-xs font-normal text-slate-300">
                   <Calendar className="h-3.5 w-3.5 text-brand-purple" /> Sun 16 Aug
-                  <Clock className="ml-1 h-3.5 w-3.5 text-brand-coral" /> 10–11 AM IST
+                  <Clock className="ml-1 h-3.5 w-3.5 text-brand-coral" /> 10-11 AM IST
                 </span>
               </p>
             </div>

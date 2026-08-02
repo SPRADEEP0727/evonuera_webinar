@@ -9,7 +9,7 @@ const people = [
   { icon: Server, title: 'IT Professionals', desc: 'Bring AI automation into your work.' },
   { icon: Briefcase, title: 'Freelancers', desc: 'Ship AI products clients actually pay for.' },
   { icon: Rocket, title: 'Founders', desc: 'Build and validate ideas at AI speed.' },
-  { icon: Heart, title: 'Anyone Interested in AI', desc: 'No matter your background — start building.' },
+  { icon: Heart, title: 'Anyone Interested in AI', desc: 'No matter your background - start building.' },
 ]
 
 const grid = { hidden: {}, show: { transition: { staggerChildren: 0.07 } } }

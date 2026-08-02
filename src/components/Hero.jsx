@@ -48,7 +48,7 @@ export default function Hero() {
               </span>
               <span className="hidden h-4 w-px bg-white/15 sm:block" />
               <span className="flex items-center gap-2 font-medium text-white">
-                <Clock className="h-4 w-4 text-brand-coral" /> 10:00 – 11:00 AM IST
+                <Clock className="h-4 w-4 text-brand-coral" /> 10:00 - 11:00 AM IST
               </span>
               <span className="hidden h-4 w-px bg-white/15 sm:block" />
               <span className="flex items-center gap-2 font-medium text-white">
@@ -62,7 +62,7 @@ export default function Hero() {
             className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
           >
             <button onClick={openReserve} className="btn-primary w-full sm:w-auto">
-              Reserve My Seat — ₹49
+              Reserve My Seat - ₹49
               <ArrowRight className="h-4.5 w-4.5" />
             </button>
             <a href="#curriculum" className="btn-ghost w-full sm:w-auto">
@@ -110,7 +110,7 @@ export default function Hero() {
               <source srcSet="/images/hero.webp" type="image/webp" />
               <img
                 src="/images/hero.png"
-                alt="Developer building and deploying an AI product live — AI agent flow, code editor and deployment dashboard on stage"
+                alt="Developer building and deploying an AI product live - AI agent flow, code editor and deployment dashboard on stage"
                 width={1536}
                 height={1024}
                 loading="eager"

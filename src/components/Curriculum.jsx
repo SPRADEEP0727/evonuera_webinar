@@ -26,7 +26,7 @@ const topics = [
   {
     icon: CloudUpload,
     title: 'Deploy Your Website for FREE',
-    desc: 'Take your project from localhost to a live URL — at zero cost.',
+    desc: 'Take your project from localhost to a live URL - at zero cost.',
   },
   {
     icon: Workflow,
@@ -68,7 +68,7 @@ export default function Curriculum() {
           theme="light"
           eyebrow="What You'll Learn"
           title="A practical playbook to build & ship AI products"
-          subtitle="Every session is hands-on and outcome-driven — no fluff, just what actually moves you forward."
+          subtitle="Every session is hands-on and outcome-driven - no fluff, just what actually moves you forward."
         />
 
         <motion.div
@@ -97,7 +97,7 @@ export default function Curriculum() {
 
         <Reveal delay={0.1} className="mt-12 text-center">
           <button onClick={openReserve} className="btn-primary">
-            Reserve My Seat — ₹49
+            Reserve My Seat - ₹49
           </button>
         </Reveal>
       </div>

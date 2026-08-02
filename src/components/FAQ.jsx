@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: 'How much does it cost?',
-    a: 'Just ₹49 — a small one-time fee to reserve your live seat. It keeps registrations serious and helps us keep the session high-value. There are no hidden charges beyond that.',
+    a: 'Just ₹49 - a small one-time fee to reserve your live seat. It keeps registrations serious and helps us keep the session high-value. There are no hidden charges beyond that.',
   },
   {
     q: 'Will there be a recording?',

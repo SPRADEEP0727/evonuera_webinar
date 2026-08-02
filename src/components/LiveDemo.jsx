@@ -6,7 +6,7 @@ const steps = [
   { icon: Lightbulb, label: 'Idea', desc: 'Start from a real problem worth solving.' },
   { icon: Terminal, label: 'Claude Code', desc: 'Turn intent into working code with AI.' },
   { icon: Code2, label: 'Development', desc: 'Build features fast, the right way.' },
-  { icon: Rocket, label: 'Deployment', desc: 'Ship it live to the world — for free.' },
+  { icon: Rocket, label: 'Deployment', desc: 'Ship it live to the world - for free.' },
   { icon: Globe, label: 'Live Website', desc: 'A real product people can use.' },
   { icon: TrendingUp, label: 'Scaling', desc: 'Grow it into something bigger.' },
 ]
@@ -18,7 +18,7 @@ export default function LiveDemo() {
         <SectionHeader
           eyebrow="Live Demonstration"
           title="Watch Me Build & Deploy an AI Product Live"
-          subtitle="From a blank editor to a live, scalable website — in real time, no edits, no hiding."
+          subtitle="From a blank editor to a live, scalable website - in real time, no edits, no hiding."
         />
 
         <div className="relative mt-16">

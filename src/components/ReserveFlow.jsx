@@ -38,7 +38,7 @@ const steps = ['Details', 'Payment', 'Community']
 /**
  * Reusable 3-step reservation flow:
  *   1. Details form  →  2. Razorpay payment  →  3. Join WhatsApp community
- * Styled for a light (white) surface — used inside the modal and the
+ * Styled for a light (white) surface - used inside the modal and the
  * inline Registration section.
  */
 export default function ReserveFlow() {
@@ -116,7 +116,7 @@ export default function ReserveFlow() {
       </div>
 
       <AnimatePresence mode="wait">
-        {/* STEP 1 — details */}
+        {/* STEP 1 - details */}
         {step === 0 && (
           <motion.form
             key="details"
@@ -130,7 +130,7 @@ export default function ReserveFlow() {
           >
             <div>
               <h3 className="font-display text-xl font-bold text-slate-900">Reserve your seat</h3>
-              <p className="mt-1 text-sm text-slate-500">Fill your details to continue — takes 20 seconds.</p>
+              <p className="mt-1 text-sm text-slate-500">Fill your details to continue - takes 20 seconds.</p>
             </div>
 
             <Field icon={User} label="Full Name" placeholder="Ada Lovelace" value={form.name} onChange={update('name')} error={errors.name} autoComplete="name" />
@@ -161,7 +161,7 @@ export default function ReserveFlow() {
             </div>
 
             <button type="submit" className="btn-primary mt-1 w-full">
-              Continue to Payment — {EVENT_PRICE}
+              Continue to Payment - {EVENT_PRICE}
               <ArrowRight className="h-4.5 w-4.5" />
             </button>
             <p className="flex items-center justify-center gap-1.5 text-center text-xs text-slate-400">
@@ -170,7 +170,7 @@ export default function ReserveFlow() {
           </motion.form>
         )}
 
-        {/* STEP 2 — payment */}
+        {/* STEP 2 - payment */}
         {step === 1 && (
           <motion.div
             key="payment"
@@ -186,7 +186,7 @@ export default function ReserveFlow() {
 
             <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-slate-600">AI Masterclass — Live Seat</span>
+                <span className="text-sm text-slate-600">AI Masterclass - Live Seat</span>
                 <span className="font-display text-2xl font-bold text-slate-900">{EVENT_PRICE}</span>
               </div>
               <div className="mt-3 space-y-1.5 border-t border-slate-200 pt-3 text-xs text-slate-500">
@@ -211,7 +211,7 @@ export default function ReserveFlow() {
           </motion.div>
         )}
 
-        {/* STEP 3 — WhatsApp community */}
+        {/* STEP 3 - WhatsApp community */}
         {step === 2 && (
           <motion.div
             key="community"
@@ -228,7 +228,7 @@ export default function ReserveFlow() {
             </h3>
             <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-slate-500">
               Finish your {EVENT_PRICE} payment in the opened tab if you haven't, then join our
-              WhatsApp community — that's where you'll get the joining link, reminders and resources.
+              WhatsApp community - that's where you'll get the joining link, reminders and resources.
             </p>
 
             <button
