@@ -1,62 +1,27 @@
 import { motion } from 'framer-motion'
-import {
-  BrainCircuit,
-  MonitorPlay,
-  CloudUpload,
-  Workflow,
-  Boxes,
-  Bot,
-  Map,
-} from 'lucide-react'
+import { Check } from 'lucide-react'
 import Reveal, { SectionHeader } from './Reveal.jsx'
 import LightSection from './LightSection.jsx'
 import { useReserve } from './ReserveContext.jsx'
 
-const topics = [
-  {
-    icon: BrainCircuit,
-    title: 'How AI is Transforming Software',
-    desc: 'Understand the shift reshaping how modern software is designed, built and shipped.',
-  },
-  {
-    icon: MonitorPlay,
-    title: 'Build a Website with Claude Code',
-    desc: 'Watch a real, live demonstration of building a working website using Claude Code.',
-  },
-  {
-    icon: CloudUpload,
-    title: 'Deploy Your Website for FREE',
-    desc: 'Take your project from localhost to a live URL - at zero cost.',
-  },
-  {
-    icon: Workflow,
-    title: 'AI Product Development Workflow',
-    desc: 'The end-to-end workflow to go from idea to a shipped AI product.',
-  },
-  {
-    icon: Boxes,
-    title: 'Introduction to AI Systems',
-    desc: 'Learn how real AI systems are architected beyond single prompts.',
-  },
-  {
-    icon: Bot,
-    title: 'AI Agents & Automation',
-    desc: 'Build agents that reason, use tools and automate real workflows.',
-  },
-  {
-    icon: Map,
-    title: 'Roadmap to Becoming an AI Builder',
-    desc: 'A clear, actionable path to grow from learner to AI product builder.',
-  },
+const items = [
+  'How AI is changing software development',
+  'The roadmap to becoming an AI Builder',
+  'Modern AI development workflow',
+  'How AI Systems are built',
+  'How AI Products are launched',
+  'Live demonstration: Build & deploy a website using Claude Code',
+  'AI tools every builder should know',
+  'How to continue your journey with AI Systems Mastery',
 ]
 
 const grid = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
+  show: { transition: { staggerChildren: 0.07 } },
 }
 const cardV = {
-  hidden: { opacity: 0, y: 26 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
 export default function Curriculum() {
@@ -67,30 +32,33 @@ export default function Curriculum() {
         <SectionHeader
           theme="light"
           eyebrow="What You'll Learn"
-          title="A practical playbook to build & ship AI products"
-          subtitle="Every session is hands-on and outcome-driven - no fluff, just what actually moves you forward."
+          title="The Complete Roadmap to Building AI Systems & AI Products"
+          subtitle="From your first AI-assisted application to production-ready AI solutions."
         />
+
+        <Reveal delay={0.1} className="mt-8 text-center">
+          <p className="text-base font-semibold text-slate-700 sm:text-lg">
+            In this Masterclass, you'll discover:
+          </p>
+        </Reveal>
 
         <motion.div
           variants={grid}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
-          className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
+          className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-5"
         >
-          {topics.map((t, i) => (
+          {items.map((item) => (
             <motion.div
-              key={t.title}
+              key={item}
               variants={cardV}
-              className={`card-light group p-6 ${
-                i === topics.length - 1 ? 'sm:col-span-2 lg:col-span-1' : ''
-              }`}
+              className="card-light group flex items-center gap-4 p-4 sm:p-5"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-grad-brand shadow-glow transition-transform duration-300 group-hover:scale-110">
-                <t.icon className="h-6 w-6 text-white" strokeWidth={2} />
-              </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-slate-900">{t.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">{t.desc}</p>
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-grad-brand shadow-glow transition-transform duration-300 group-hover:scale-110">
+                <Check className="h-5 w-5 text-white" strokeWidth={3} />
+              </span>
+              <span className="text-[15px] font-medium leading-snug text-slate-800">{item}</span>
             </motion.div>
           ))}
         </motion.div>
