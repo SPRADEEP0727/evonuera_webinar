@@ -25,15 +25,21 @@ export default function Trainer() {
             <div className="absolute inset-0 -z-10 scale-105 rounded-[2rem] bg-grad-brand opacity-30 blur-3xl" />
             <div className="glass-strong overflow-hidden rounded-3xl p-2 shadow-glow-lg">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-ink-800 to-ink-850">
-                {/* Photo placeholder */}
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="text-center">
-                    <div className="mx-auto grid h-28 w-28 place-items-center rounded-full bg-grad-brand text-4xl font-bold text-white shadow-glow">
-                      PS
-                    </div>
-                    <p className="mt-4 text-xs uppercase tracking-widest text-slate-500">Photo Placeholder</p>
-                  </div>
-                </div>
+                {/* Instructor photo */}
+                <picture>
+                  <source srcSet="/images/my_img.webp" type="image/webp" />
+                  <img
+                    src="/images/my_img.png"
+                    alt="Pradeep Subramanian - Founder of Evonuera"
+                    width={1177}
+                    height={1336}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                  />
+                </picture>
+                {/* Bottom gradient for badge legibility */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 rounded-xl glass px-3 py-2">
                   <BadgeCheck className="h-4 w-4 text-brand-coral" />
                   <span className="text-xs font-medium text-slate-200">Verified Instructor</span>
