@@ -36,7 +36,7 @@ export default function Registration() {
                     <Calendar className="h-4.5 w-4.5 text-brand-purple" /> Sunday, 16 August
                   </span>
                   <span className="flex items-center gap-2">
-                    <Clock className="h-4.5 w-4.5 text-brand-coral" /> 10:00 - 11:00 AM IST
+                    <Clock className="h-4.5 w-4.5 text-brand-coral" /> 10:00 - 11:30 AM IST
                   </span>
                   <span className="flex items-center gap-2">
                     <Languages className="h-4.5 w-4.5 text-brand-purple" /> Language: Tamil

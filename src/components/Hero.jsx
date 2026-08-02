@@ -42,17 +42,17 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-7 flex justify-center lg:justify-start">
-            <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-2xl glass px-4 py-2.5 text-sm">
-              <span className="flex items-center gap-2 font-medium text-white">
-                <Calendar className="h-4 w-4 text-brand-purple" /> Sun, 16 Aug
+            <div className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl border border-brand-purple/30 bg-brand-purple/10 px-5 py-3 text-sm shadow-glow sm:text-base">
+              <span className="flex items-center gap-2 font-bold text-white">
+                <Calendar className="h-5 w-5 text-brand-purple" /> Sun, 16 Aug 2026
               </span>
-              <span className="hidden h-4 w-px bg-white/15 sm:block" />
-              <span className="flex items-center gap-2 font-medium text-white">
-                <Clock className="h-4 w-4 text-brand-coral" /> 10:00 - 11:00 AM IST
+              <span className="hidden h-5 w-px bg-white/20 sm:block" />
+              <span className="flex items-center gap-2 font-bold text-white">
+                <Clock className="h-5 w-5 text-brand-coral" /> 10:00 - 11:30 AM IST
               </span>
-              <span className="hidden h-4 w-px bg-white/15 sm:block" />
-              <span className="flex items-center gap-2 font-medium text-white">
-                <Languages className="h-4 w-4 text-brand-purple" /> Language: Tamil
+              <span className="hidden h-5 w-px bg-white/20 sm:block" />
+              <span className="flex items-center gap-2 font-bold text-white">
+                <Languages className="h-5 w-5 text-brand-purple" /> Tamil
               </span>
             </div>
           </motion.div>

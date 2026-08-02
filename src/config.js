@@ -14,4 +14,4 @@ export const WHATSAPP_COMMUNITY_LINK = 'https://chat.whatsapp.com/REPLACE_WITH_Y
 // Event details (kept here so they stay consistent everywhere)
 export const EVENT_PRICE = '₹49'
 export const EVENT_DATE = 'Sunday, 16 August'
-export const EVENT_TIME = '10:00 - 11:00 AM IST'
+export const EVENT_TIME = '10:00 - 11:30 AM IST'
