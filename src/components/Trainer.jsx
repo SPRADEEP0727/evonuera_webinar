@@ -10,7 +10,7 @@ const expertise = [
 ]
 
 const trust = [
-  { icon: Users, value: '5,000+', label: 'Learners guided' },
+  { icon: Users, value: '150+', label: 'Learners guided' },
   { icon: Star, value: '4.9/5', label: 'Average rating' },
   { icon: ShieldCheck, value: '10+ yrs', label: 'Engineering experience' },
 ]
