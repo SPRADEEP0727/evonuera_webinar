@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BadgeCheck, Cpu, Workflow, Bot, Boxes, Users, Star, ShieldCheck } from 'lucide-react'
+import { Cpu, Workflow, Bot, Boxes, Users, Star, ShieldCheck } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 
 const expertise = [
@@ -38,12 +38,6 @@ export default function Trainer() {
                     className="absolute inset-0 h-full w-full object-cover object-center"
                   />
                 </picture>
-                {/* Bottom gradient for badge legibility */}
-                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 rounded-xl glass px-3 py-2">
-                  <BadgeCheck className="h-4 w-4 text-brand-coral" />
-                  <span className="text-xs font-medium text-slate-200">Verified Instructor</span>
-                </div>
               </div>
             </div>
           </Reveal>
@@ -60,8 +54,6 @@ export default function Trainer() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-300">
-                <span className="font-medium text-white">Software Lead at Bosch</span>
-                <span className="h-1 w-1 rounded-full bg-slate-600" />
                 <span className="gradient-text font-semibold">Founder of Evonuera</span>
               </div>
             </Reveal>
