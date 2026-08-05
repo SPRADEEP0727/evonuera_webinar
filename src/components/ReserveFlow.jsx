@@ -41,8 +41,8 @@ const steps = ['Details', 'Payment', 'Community']
  * Styled for a light (white) surface - used inside the modal and the
  * inline Registration section.
  */
-export default function ReserveFlow() {
-  const [step, setStep] = useState(0) // 0 details · 1 payment · 2 community
+export default function ReserveFlow({ initialStep = 0 }) {
+  const [step, setStep] = useState(initialStep) // 0 details · 1 payment · 2 community
   const [form, setForm] = useState({ name: '', email: '', phone: '', profession: '' })
   const [errors, setErrors] = useState({})
 
@@ -69,11 +69,16 @@ export default function ReserveFlow() {
   }
 
   const goToPayment = () => {
-    // Opens Razorpay in a new tab so this flow stays open; then advance to the
-    // WhatsApp step. (Tip: set the Razorpay link's redirect URL back to this
-    // page for a fully automatic hand-off.)
-    window.open(RAZORPAY_LINK, '_blank', 'noopener,noreferrer')
-    setStep(2)
+    // Save the lead locally, then redirect (same tab) to Razorpay. After a
+    // SUCCESSFUL payment, Razorpay returns to this site (configure the payment
+    // link's redirect URL to `<your-site>/?paid=1`) and the WhatsApp community
+    // step is shown automatically. WhatsApp is never revealed before payment.
+    try {
+      sessionStorage.setItem('evonuera_lead', JSON.stringify(form))
+    } catch {
+      /* storage unavailable - ignore */
+    }
+    window.location.href = RAZORPAY_LINK
   }
 
   const joinCommunity = () => {
@@ -181,7 +186,8 @@ export default function ReserveFlow() {
           >
             <h3 className="font-display text-xl font-bold text-slate-900">Complete your payment</h3>
             <p className="mt-1 text-sm text-slate-500">
-              A one-time {EVENT_PRICE} confirms your live seat.
+              A one-time {EVENT_PRICE} confirms your live seat. After a successful payment you'll
+              return here to join the WhatsApp community.
             </p>
 
             <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
@@ -224,11 +230,11 @@ export default function ReserveFlow() {
               <CheckCircle2 className="h-9 w-9 text-emerald-500" />
             </div>
             <h3 className="mt-5 font-display text-2xl font-bold text-slate-900">
-              You're almost in! 🎉
+              Payment successful! 🎉
             </h3>
             <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-slate-500">
-              Finish your {EVENT_PRICE} payment in the opened tab if you haven't, then join our
-              WhatsApp community - that's where you'll get the joining link, reminders and resources.
+              Your seat is confirmed. Join our WhatsApp community now - that's where you'll get the
+              joining link, reminders and resources for the masterclass.
             </p>
 
             <button
@@ -237,13 +243,6 @@ export default function ReserveFlow() {
             >
               <WhatsAppIcon className="h-5 w-5" />
               Join WhatsApp Community
-            </button>
-
-            <button
-              onClick={() => window.open(RAZORPAY_LINK, '_blank', 'noopener,noreferrer')}
-              className="mt-3 text-sm font-medium text-slate-500 underline-offset-2 transition-colors hover:text-slate-800 hover:underline"
-            >
-              Re-open payment page
             </button>
           </motion.div>
         )}

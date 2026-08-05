@@ -9,8 +9,35 @@ export const useReserve = () => useContext(ReserveContext)
 
 export function ReserveProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
-  const open = useCallback(() => setIsOpen(true), [])
+  const [startStep, setStartStep] = useState(0) // 0 details · 2 community (after payment)
+  const open = useCallback(() => {
+    setStartStep(0)
+    setIsOpen(true)
+  }, [])
   const close = useCallback(() => setIsOpen(false), [])
+
+  // On return from a SUCCESSFUL Razorpay payment, open the modal straight to
+  // the WhatsApp community step. Razorpay is configured to redirect back to
+  // `<site>/?paid=1`; we also accept Razorpay's own success params. The
+  // WhatsApp link is never shown unless one of these is present.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const paid =
+      params.get('paid') === '1' ||
+      params.get('razorpay_payment_link_status') === 'paid' ||
+      !!params.get('razorpay_payment_id')
+    if (!paid) return
+
+    setStartStep(2)
+    setIsOpen(true)
+
+    // Clean the payment params out of the URL so a refresh doesn't re-trigger.
+    const url = new URL(window.location.href)
+    ;['paid', 'razorpay_payment_id', 'razorpay_payment_link_id', 'razorpay_payment_link_reference_id', 'razorpay_payment_link_status', 'razorpay_signature'].forEach(
+      (k) => url.searchParams.delete(k)
+    )
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash)
+  }, [])
 
   // Esc to close + lock body scroll while open
   useEffect(() => {
@@ -80,7 +107,7 @@ export function ReserveProvider({ children }) {
                   <span className="font-display text-lg font-bold text-slate-900">Evonuera</span>
                 </div>
 
-                <ReserveFlow />
+                <ReserveFlow key={startStep} initialStep={startStep} />
               </div>
             </motion.div>
           </motion.div>
