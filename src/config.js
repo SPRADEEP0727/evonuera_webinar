@@ -5,7 +5,7 @@
 
 // Razorpay payment link/page for the ₹49 registration.
 // Example: 'https://rzp.io/l/evonuera-masterclass'
-export const RAZORPAY_LINK = 'https://rzp.io/l/REPLACE_WITH_YOUR_LINK'
+export const RAZORPAY_LINK = 'https://rzp.io/rzp/E9XpLCRR'
 
 // WhatsApp community invite link.
 // Example: 'https://chat.whatsapp.com/ABC123xyz'
