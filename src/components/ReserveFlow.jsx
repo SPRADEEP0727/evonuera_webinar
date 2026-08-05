@@ -69,16 +69,23 @@ export default function ReserveFlow({ initialStep = 0 }) {
   }
 
   const goToPayment = () => {
-    // Save the lead locally, then redirect (same tab) to Razorpay. After a
-    // SUCCESSFUL payment, Razorpay returns to this site (configure the payment
-    // link's redirect URL to `<your-site>/?paid=1`) and the WhatsApp community
-    // step is shown automatically. WhatsApp is never revealed before payment.
+    // Save the lead locally, then redirect (same tab) to Razorpay with the
+    // customer's details prefilled. After a SUCCESSFUL payment, Razorpay
+    // returns to this site (configure the payment link's redirect URL to
+    // `<your-site>/?paid=1`) and the WhatsApp community step is shown
+    // automatically. WhatsApp is never revealed before payment.
     try {
       sessionStorage.setItem('evonuera_lead', JSON.stringify(form))
     } catch {
       /* storage unavailable - ignore */
     }
-    window.location.href = RAZORPAY_LINK
+
+    const p = new URLSearchParams()
+    if (form.name) p.set('prefill[name]', form.name)
+    if (form.email) p.set('prefill[email]', form.email)
+    if (form.phone) p.set('prefill[contact]', form.phone)
+    const sep = RAZORPAY_LINK.includes('?') ? '&' : '?'
+    window.location.href = `${RAZORPAY_LINK}${sep}${p.toString()}`
   }
 
   const joinCommunity = () => {
