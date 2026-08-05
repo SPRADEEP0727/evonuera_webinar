@@ -9,7 +9,7 @@ export const RAZORPAY_LINK = 'https://rzp.io/rzp/E9XpLCRR'
 
 // WhatsApp community invite link.
 // Example: 'https://chat.whatsapp.com/ABC123xyz'
-export const WHATSAPP_COMMUNITY_LINK = 'https://chat.whatsapp.com/REPLACE_WITH_YOUR_INVITE'
+export const WHATSAPP_COMMUNITY_LINK = 'https://chat.whatsapp.com/ExMrZqW9cqJEeXP1ncslA4'
 
 // Event details (kept here so they stay consistent everywhere)
 export const EVENT_PRICE = '₹49'
