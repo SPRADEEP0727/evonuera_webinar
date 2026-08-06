@@ -43,7 +43,7 @@ const steps = ['Details', 'Payment', 'Community']
  */
 export default function ReserveFlow({ initialStep = 0 }) {
   const [step, setStep] = useState(initialStep) // 0 details · 1 payment · 2 community
-  const [form, setForm] = useState({ name: '', email: '', phone: '', profession: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '+91 ', profession: '' })
   const [errors, setErrors] = useState({})
 
   const update = (k) => (e) => {
@@ -145,7 +145,7 @@ export default function ReserveFlow({ initialStep = 0 }) {
               <p className="mt-1 text-sm text-slate-500">Fill your details to continue - takes 20 seconds.</p>
             </div>
 
-            <Field icon={User} label="Full Name" placeholder="Ada Lovelace" value={form.name} onChange={update('name')} error={errors.name} autoComplete="name" />
+            <Field icon={User} label="Full Name" placeholder="Your name" value={form.name} onChange={update('name')} error={errors.name} autoComplete="name" />
             <Field icon={Mail} label="Email" type="email" placeholder="you@example.com" value={form.email} onChange={update('email')} error={errors.email} autoComplete="email" />
             <Field icon={Phone} label="Phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={update('phone')} error={errors.phone} autoComplete="tel" />
 
