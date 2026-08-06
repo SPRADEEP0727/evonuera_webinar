@@ -17,6 +17,7 @@ import {
 import {
   RAZORPAY_LINK,
   WHATSAPP_COMMUNITY_LINK,
+  LEAD_WEBHOOK_URL,
   EVENT_PRICE,
   EVENT_DATE,
   EVENT_TIME,
@@ -60,11 +61,33 @@ export default function ReserveFlow({ initialStep = 0 }) {
     return er
   }
 
+  const captureLead = () => {
+    // Fire-and-forget POST to a Google Apps Script Web App that appends the
+    // lead to a Google Sheet. Uses no-cors + text/plain so the browser sends
+    // it without a CORS preflight; we don't need to read the response.
+    if (!LEAD_WEBHOOK_URL) return
+    try {
+      fetch(LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          ...form,
+          price: EVENT_PRICE,
+          source: 'landing-page',
+          submittedAt: new Date().toISOString(),
+        }),
+      }).catch(() => {})
+    } catch {
+      /* network unavailable - ignore, never block the user */
+    }
+  }
+
   const submitDetails = (e) => {
     e.preventDefault()
     const er = validate()
     if (Object.keys(er).length) return setErrors(er)
-    // TODO: optionally POST `form` to your CRM / Google Sheet / webhook here.
+    captureLead() // save the lead to Google Sheet before payment
     setStep(1)
   }
 

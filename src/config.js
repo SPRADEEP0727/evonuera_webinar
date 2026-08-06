@@ -11,6 +11,11 @@ export const RAZORPAY_LINK = 'https://rzp.io/rzp/E9XpLCRR'
 // Example: 'https://chat.whatsapp.com/ABC123xyz'
 export const WHATSAPP_COMMUNITY_LINK = 'https://chat.whatsapp.com/ExMrZqW9cqJEeXP1ncslA4'
 
+// Google Apps Script Web App URL that saves each lead to a Google Sheet.
+// Leave empty to disable lead capture. Paste your deployed /exec URL here.
+// Example: 'https://script.google.com/macros/s/AKfy.../exec'
+export const LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyme3uWz0GsYtU5cZE0irq0LD2_dgVlIABcSy3xW8WQZSwSV98-iEFvZaf6x7e504uwPg/exec'
+
 // Event details (kept here so they stay consistent everywhere)
 export const EVENT_PRICE = '₹49'
 export const EVENT_DATE = 'Sunday, 16 August'
